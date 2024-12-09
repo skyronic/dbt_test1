@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw  # Changed from 'public' to 'raw'
+    schema: public
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_payments

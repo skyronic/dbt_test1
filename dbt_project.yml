@@ -2,7 +2,10 @@ name: 'dbt_test1'
 version: '1.0.0'
 config-version: 2
 
-profile: 'default'
+profile: 'dbt_test1'
+
+dbt-cloud:
+    project-id: 386882
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
