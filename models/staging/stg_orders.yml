@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: stg_orders
+    columns:
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: status
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: is_completed
+        description: ""
+        meta:
+          dimension:
+            type: number

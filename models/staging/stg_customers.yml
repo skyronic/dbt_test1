@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: stg_customers
+    columns:
+      - name: first_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: last_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: full_name
+        description: ""
+        meta:
+          dimension:
+            type: string
