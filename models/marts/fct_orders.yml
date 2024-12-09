@@ -25,7 +25,7 @@ models:
       - name: total_amount
         description: ""
         meta:
-          metric:
+          metrics:
             total_sales:
               type: sum
       - name: payment_methods
