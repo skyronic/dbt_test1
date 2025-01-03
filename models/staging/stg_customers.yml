@@ -1,6 +1,10 @@
 version: 2
 models:
   - name: stg_customers
+    meta:
+      secoda:
+        monitors:
+          testkey: testval
     columns:
       - name: first_name
         description: ""

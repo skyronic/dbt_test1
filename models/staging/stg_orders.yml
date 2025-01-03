@@ -1,6 +1,10 @@
 version: 2
 models:
   - name: stg_orders
+    meta:
+      secoda:
+        monitors:
+          testkey2: testval2
     columns:
       - name: user_id
         description: ""
