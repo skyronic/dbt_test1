@@ -4,7 +4,16 @@ models:
     meta:
       secoda:
         monitors:
-          testkey2: testval2
+          ROW_COUNT:
+            name: Row count on orders
+            thresholds:
+              method: manual  # or automatic. default: automatic
+              min: 50
+              max: 500
+              bounds: both  # or upper or lower. default: both
+            schedule:
+              cadence: daily # or: hourly
+              hour_utc: 3 # for daily: 
     columns:
       - name: user_id
         description: ""
