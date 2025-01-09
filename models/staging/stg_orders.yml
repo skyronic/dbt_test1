@@ -35,3 +35,15 @@ models:
         meta:
           dimension:
             type: number
+
+exposures:
+  - name: exp_orders
+    label: Test Label
+    type: dashboard
+    description: This is a test description.
+    url: https://tableau.com/dashboard/ssdfsd
+    depends_on:
+      - ref('stg_customers')
+    owner:
+      name: Ani
+      email: ani@secoda.co
