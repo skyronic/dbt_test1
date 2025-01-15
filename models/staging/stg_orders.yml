@@ -41,7 +41,7 @@ exposures:
     label: Test Label
     type: dashboard
     description: This is a test description.
-    url: https://tableau.com/dashboard/ssdfsd
+    url: https://app.lightdash.cloud/projects/dd2d11e8-4fd3-4173-90a1-04dbc6944a2f/dashboards/11dd9c19-fd2b-4ab1-9f1f-07368f3ef035/view
     depends_on:
       - ref('stg_customers')
     owner:
