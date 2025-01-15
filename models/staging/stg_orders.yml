@@ -37,7 +37,7 @@ models:
             type: number
 
 exposures:
-  - name: exp_orders
+  - name: Customer Health Dashboard
     label: Test Label
     type: dashboard
     description: This is a test description.
