@@ -4,6 +4,8 @@ models:
     meta:
       secoda:
         monitors:
+          custom_sql:
+            query: "SELECT 100;"
           ROW_COUNT:
             name: Row count on orders
             thresholds:
@@ -20,11 +22,24 @@ models:
         meta:
           dimension:
             type: number
+          secoda:
+            monitors:
+              - mean
+              - min
+              - cardinality
       - name: order_date
         description: ""
         meta:
           dimension:
             type: date
+          secoda:
+            monitors:
+              unique_percentage: {}
+              null_percentage:
+                name: "not as much null"
+                thresholds:
+                  sensitivity: 9
+                  bounds: lower
       - name: status
         description: ""
         meta:
