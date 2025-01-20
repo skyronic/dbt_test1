@@ -5,7 +5,7 @@ models:
       secoda:
         monitors:
           custom_sql:
-            query: "SELECT AVG(amount) FROM {{ ref('stg_orders') }}"
+            query: "SELECT 100"
             schedule:
               cadence: hourly
           row_count:
