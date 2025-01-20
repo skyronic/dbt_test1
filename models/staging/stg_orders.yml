@@ -5,51 +5,34 @@ models:
       secoda:
         monitors:
           custom_sql:
-            query: "SELECT 100;"
-          ROW_COUNT:
-            name: Row count on orders
+            query: "SELECT AVG(amount) FROM {{ ref('stg_orders') }}"
+            schedule:
+              cadence: hourly
+          row_count:
+            name: "Orders Volume Monitor"
             thresholds:
-              method: manual  # or automatic. default: automatic
+              method: manual
               min: 50
               max: 500
-              bounds: both  # or upper or lower. default: both
-            schedule:
-              cadence: daily # or: hourly
-              hour_utc: 3 # for daily: 
     columns:
-      - name: user_id
-        description: ""
+      - name: order_amount
         meta:
-          dimension:
-            type: number
           secoda:
             monitors:
               - mean
-              - min
-              - cardinality
-      - name: order_date
-        description: ""
+              - max
+              - null_percentage
+      - name: status
         meta:
-          dimension:
-            type: date
           secoda:
             monitors:
               unique_percentage: {}
-              null_percentage:
-                name: "not as much null"
+              cardinality:
                 thresholds:
-                  sensitivity: 9
-                  bounds: lower
-      - name: status
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: is_completed
-        description: ""
-        meta:
-          dimension:
-            type: number
+                  method: manual
+                  min: 3
+                  max: 10
+
 
 exposures:
   - name: Customer Health Dashboard
